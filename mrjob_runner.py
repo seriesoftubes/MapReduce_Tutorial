@@ -2,7 +2,7 @@ from wordstatistics import MRWordStatistics
 
 
 def main():
-    mr_job = MRWordStatistics(args=['--runner=local'])
+    mr_job = MRWordStatistics(args=['--runner=inline'])
     with mr_job.make_runner() as runner:
         runner.run()
         print 'Word' + '\t'.join(MRWordStatistics.WordDescription._fields)
